@@ -1,102 +1,109 @@
-/* GLOBAL RESET */
-*{margin:0; padding:0; box-sizing:border-box;}
-body{font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf7e6); overflow-x:hidden;}
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf7e6);}
 
 /* HEADER */
 .hero{
-    height: 450px;
-    background: linear-gradient(135deg,#4caf50,#74e39d);
-    position: relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    align-items:center;
-    padding-bottom:50px;
-    text-align:center;
-    overflow:hidden;
+  height: 450px;
+  background: linear-gradient(135deg,#4caf50,#74e39d);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 
 .title{
-    font-size:3.5rem;
-    font-weight:800;
-    color:white;
-    text-shadow:0 5px 20px rgba(0,0,0,0.4);
-    z-index:10;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  z-index: 10;
+  position: relative;
 }
 
 .subtitle{
-    font-size:1.3rem;
-    margin-top:8px;
-    color:white;
-    opacity:0.9;
-    z-index:10;
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 5px;
+  z-index: 10;
+  position: relative;
+  opacity: 0.9;
 }
 
-/* CIRCULAR CITY ANIMATION */
+/* CITY ANIMATION */
 .city-animation{
-    position:absolute;
-    width:300px;
-    height:300px;
-    bottom:10px;
-    display:block;
-    z-index:1;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  bottom: 10px;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .circle-plate{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    border:6px solid rgba(255,255,255,0.4);
-    animation: rotate 12s linear infinite;
-    position:absolute;
-    top:0; left:0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid rgba(255,255,255,0.4);
+  position: absolute;
+  top: 0; left: 0;
+  animation: rotatePlate 12s linear infinite;
 }
 
+/* BUILDINGS */
 .building{
-    width:35px;
-    border-radius:6px;
-    position:absolute;
-    bottom:40px;
-    background: linear-gradient(#b2ffb4,#4ecf64);
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    animation: floatUp 3s ease-in-out infinite alternate;
+  width: 35px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 40px;
+  background: linear-gradient(#b2ffb4,#4ecf64);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: floatBuilding 3s ease-in-out infinite alternate;
 }
 
-.b1{ left:30px; height:90px; animation-delay:0s; }
-.b2{ right:40px; height:70px; animation-delay:.4s; }
-.b3{ left:120px; height:100px; animation-delay:.8s; }
+.b1{ left:30px; height:90px; animation-delay: 0s; }
+.b2{ left:120px; height:70px; animation-delay: 0.5s; }
+.b3{ right:40px; height:100px; animation-delay: 1s; }
 
+/* TREES */
 .tree{
-    width:25px;
-    height:25px;
-    border-radius:50%;
-    background:#2ecc71;
-    position:absolute;
-    bottom:20px;
-    box-shadow:0 3px 5px rgba(0,0,0,0.3);
-    animation:sway 3s ease-in-out infinite alternate;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #2ecc71;
+  position: absolute;
+  bottom: 20px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  animation: swayTree 3s ease-in-out infinite alternate;
 }
 
 .t1{ left:10px; }
 .t2{ right:30px; }
 .t3{ left:130px; }
 
+/* CLOUDS */
 .cloud{
-    position:absolute;
-    width:100px;
-    height:35px;
-    background:white;
-    border-radius:50px;
-    opacity:0.7;
-    filter:blur(1px);
+  position: absolute;
+  width: 100px;
+  height: 35px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.7;
+  filter: blur(1px);
 }
 
-.c1{ top:20px; left:-150px; animation:cloudMove 30s linear infinite; }
-.c2{ top:50px; left:-200px; animation:cloudMove 40s linear infinite; }
+.c1{ top: 20px; left: -150px; animation: cloudMove 25s linear infinite; }
+.c2{ top: 50px; left: -200px; animation: cloudMove 35s linear infinite; }
 
-@keyframes rotate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-@keyframes floatUp{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}
-@keyframes sway{0%{transform:rotate(0deg);}100%{transform:rotate(5deg);}}
+/* ANIMATIONS */
+@keyframes rotatePlate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes floatBuilding{0%{transform:translateY(0);}100%{transform:translateY(-15px);}}
+@keyframes swayTree{0%{transform:rotate(0deg);}100%{transform:rotate(5deg);}}
 @keyframes cloudMove{0%{transform:translateX(0);}100%{transform:translateX(150vw);}}
 
 /* TEAM SECTION */
@@ -104,15 +111,17 @@ body{font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf7
 .team-section h2{font-size:28px;color:#046f27;margin-bottom:25px;}
 .team-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
 
+/* CARD */
 .card{
-    background:white;
-    width:220px;
-    padding:20px;
-    border-radius:18px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.1);
-    transition:0.3s;
-    text-align:center;
+  background:white;
+  width:220px;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+  text-align:center;
 }
+
 .card:hover{transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.15);}
 
 .avatar{width:70px;margin:0 auto;}
@@ -122,6 +131,14 @@ body{font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf7
 .btn:hover{background:#0ca52d;}
 
 /* FOOTER */
-footer{background:#0a5b1b;color:white;text-align:center;padding:25px 10px;margin-top:40px;border-radius:20px 20px 0 0;}
+footer{
+  background:#0a5b1b;
+  color:white;
+  text-align:center;
+  padding:25px 10px;
+  margin-top:40px;
+  border-radius:20px 20px 0 0;
+}
+
 footer .copy{margin-top:10px;opacity:0.8;}
 footer .guide{margin-top:5px;font-weight:600;}
