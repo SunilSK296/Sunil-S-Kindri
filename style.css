@@ -1,104 +1,101 @@
 /* RESET */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf7e6);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Poppins",sans-serif;background: linear-gradient(#e3fbe4,#daf7e6);}
 
 /* HEADER */
 .hero{
-  height: 450px;
+  height:500px;
   background: linear-gradient(135deg,#4caf50,#74e39d);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  padding-bottom:60px;
 }
 
 .title{
-  font-size: 3rem;
-  font-weight: 800;
-  color: white;
-  text-shadow: 0 5px 20px rgba(0,0,0,0.4);
-  z-index: 10;
-  position: relative;
+  font-size:3.2rem;
+  font-weight:800;
+  color:white;
+  text-shadow:0 5px 20px rgba(0,0,0,0.4);
+  z-index:10;
+  position:relative;
 }
 
 .subtitle{
-  font-size: 1.2rem;
-  color: white;
-  margin-top: 5px;
-  z-index: 10;
-  position: relative;
-  opacity: 0.9;
+  font-size:1.3rem;
+  color:white;
+  margin-top:5px;
+  z-index:10;
+  position:relative;
+  opacity:0.9;
 }
 
 /* CITY ANIMATION */
 .city-animation{
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  bottom: 10px;
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
+  position:absolute;
+  width:350px;
+  height:350px;
+  bottom:10px;
+  z-index:1;
+  left:50%;
+  transform:translateX(-50%);
 }
 
 .circle-plate{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 6px solid rgba(255,255,255,0.4);
-  position: absolute;
-  top: 0; left: 0;
-  animation: rotatePlate 12s linear infinite;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:6px solid rgba(255,255,255,0.4);
+  position:absolute;
+  top:0; left:0;
+  animation: rotatePlate 15s linear infinite;
 }
 
-/* BUILDINGS */
 .building{
-  width: 35px;
-  border-radius: 6px;
-  position: absolute;
-  bottom: 40px;
+  width:35px;
+  border-radius:6px;
+  position:absolute;
+  bottom:50px;
   background: linear-gradient(#b2ffb4,#4ecf64);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
   animation: floatBuilding 3s ease-in-out infinite alternate;
 }
 
-.b1{ left:30px; height:90px; animation-delay: 0s; }
-.b2{ left:120px; height:70px; animation-delay: 0.5s; }
-.b3{ right:40px; height:100px; animation-delay: 1s; }
+.b1{ left:40px; height:90px; animation-delay:0s; }
+.b2{ left:140px; height:70px; animation-delay:0.5s; }
+.b3{ right:50px; height:100px; animation-delay:1s; }
 
-/* TREES */
 .tree{
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #2ecc71;
-  position: absolute;
-  bottom: 20px;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
-  animation: swayTree 3s ease-in-out infinite alternate;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:#2ecc71;
+  position:absolute;
+  bottom:30px;
+  box-shadow:0 3px 5px rgba(0,0,0,0.3);
+  animation:swayTree 3s ease-in-out infinite alternate;
 }
 
-.t1{ left:10px; }
-.t2{ right:30px; }
-.t3{ left:130px; }
+.t1{ left:20px; }
+.t2{ right:40px; }
+.t3{ left:150px; }
 
-/* CLOUDS */
 .cloud{
-  position: absolute;
-  width: 100px;
-  height: 35px;
-  background: white;
-  border-radius: 50px;
-  opacity: 0.7;
-  filter: blur(1px);
+  position:absolute;
+  width:100px;
+  height:35px;
+  background:white;
+  border-radius:50px;
+  opacity:0.7;
+  filter:blur(1px);
 }
 
-.c1{ top: 20px; left: -150px; animation: cloudMove 25s linear infinite; }
-.c2{ top: 50px; left: -200px; animation: cloudMove 35s linear infinite; }
+.c1{ top:20px; left:-150px; animation:cloudMove 25s linear infinite; }
+.c2{ top:60px; left:-200px; animation:cloudMove 35s linear infinite; }
 
 /* ANIMATIONS */
 @keyframes rotatePlate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
@@ -106,8 +103,23 @@ body {font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf
 @keyframes swayTree{0%{transform:rotate(0deg);}100%{transform:rotate(5deg);}}
 @keyframes cloudMove{0%{transform:translateX(0);}100%{transform:translateX(150vw);}}
 
+/* FEATURES */
+.features{padding:50px 20px; text-align:center;}
+.features h2{font-size:28px;color:#046f27;margin-bottom:30px;}
+.features-container{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;}
+.feature-card{
+  background:white;
+  width:250px;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.feature-card:hover{transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.15);}
+.feature-icon{width:50px;margin-bottom:15px;}
+
 /* TEAM SECTION */
-.team-section{padding:40px;text-align:center;}
+.team-section{padding:50px 20px;text-align:center;}
 .team-section h2{font-size:28px;color:#046f27;margin-bottom:25px;}
 .team-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
 
@@ -121,9 +133,7 @@ body {font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf
   transition:0.3s;
   text-align:center;
 }
-
 .card:hover{transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.15);}
-
 .avatar{width:70px;margin:0 auto;}
 .logo{width:30px;margin:10px auto; display:block;}
 .usn{color:#555;font-size:14px;margin:6px 0;}
@@ -131,14 +141,6 @@ body {font-family:"Poppins",sans-serif; background: linear-gradient(#e3fbe4,#daf
 .btn:hover{background:#0ca52d;}
 
 /* FOOTER */
-footer{
-  background:#0a5b1b;
-  color:white;
-  text-align:center;
-  padding:25px 10px;
-  margin-top:40px;
-  border-radius:20px 20px 0 0;
-}
-
+footer{background:#0a5b1b;color:white;text-align:center;padding:25px 10px;margin-top:40px;border-radius:20px 20px 0 0;}
 footer .copy{margin-top:10px;opacity:0.8;}
 footer .guide{margin-top:5px;font-weight:600;}
