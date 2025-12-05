@@ -4,38 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart City Design</title>
-
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Smart City</h2>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Project</a>
-        <a href="#">Sushant</a>
-        <a href="sunil.html">Sunil</a>
-        <a href="#">Vaishnavi</a>
-        <a href="#">Vijayalaxmi</a>
-        <a href="#">Collabz</a>
-    </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">Smart City</div>
+        <div class="nav-right">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Project</a>
+            <a href="sunil.html">Sunil</a>
+            <a href="#">Team</a>
+        </div>
+    </nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Smart City Design</h1>
+        <p class="hero-tagline">Algorithmic Approach for Modern Urban Development</p>
+    </section>
 
-        <h1>SMART CITY DESIGN</h1>
-        <p class="tagline">Algorithmic Approach for Modern Urban Development</p>
-
-        <!-- Intro -->
-        <div class="card">
-            <h2>Introduction</h2>
+    <!-- INTRO SECTION -->
+    <section class="section intro">
+        <h2>Introduction</h2>
+        <div class="intro-box">
             <p><b>Course:</b> Design and Analysis of Algorithms (DAA)</p>
             <p><b>Course Code:</b> 24ECSC205</p>
             <p><b>Course Instructor:</b> Prof. Prakash Hegade</p>
@@ -43,37 +39,40 @@
             <p><b>Topic:</b> City Design</p>
         </div>
 
-        <!-- Description -->
         <p class="description">
             This project explores how algorithmic problem-solving can improve smart city planning,
             enabling efficient roads, optimized traffic flow, better resource usage, and automation.
         </p>
+    </section>
 
-        <!-- Team -->
-        <div class="card">
-            <h2>Team Members</h2>
+    <!-- TEAM SECTION -->
+    <section class="section team">
+        <h2>Team Members</h2>
 
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>USN</th>
-                </tr>
-                <tr><td>Vaishnavi</td><td>01FE24BCS295</td></tr>
-                <tr><td>Vijayalaxmi</td><td>01FE24BCS292</td></tr>
-                <tr><td>Sushant</td><td>01FE24BCS293</td></tr>
-                <tr><td>Sunil</td><td>01FE24BCS296</td></tr>
-            </table>
+        <div class="team-table">
+            <div class="row header">
+                <div>Name</div>
+                <div>USN</div>
+            </div>
+
+            <div class="row"><div>Vaishnavi</div><div>01FE24BCS295</div></div>
+            <div class="row"><div>Vijayalaxmi</div><div>01FE24BCS292</div></div>
+            <div class="row"><div>Sushant</div><div>01FE24BCS293</div></div>
+            <div class="row"><div>Sunil</div><div>01FE24BCS296</div></div>
         </div>
 
-        <!-- Buttons -->
-        <div class="btn-container">
-            <a href="vaishnavi.html"><button class="btn">Vaishnavi</button></a>
-            <a href="vijayalaxmi.html"><button class="btn">Vijayalaxmi</button></a>
-            <a href="sushant.html"><button class="btn">Sushant</button></a>
-            <a href="sunil.html"><button class="btn">Sunil</button></a>
+        <div class="btn-row">
+            <a href="vaishnavi.html" class="btn">Vaishnavi</a>
+            <a href="vijayalaxmi.html" class="btn">Vijayalaxmi</a>
+            <a href="sushant.html" class="btn">Sushant</a>
+            <a href="sunil.html" class="btn">Sunil</a>
         </div>
+    </section>
 
-    </div>
+    <!-- FOOTER -->
+    <footer>
+        Smart City DAA Project — KLE Technological University
+    </footer>
 
 </body>
 </html>
