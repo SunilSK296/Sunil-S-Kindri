@@ -1,146 +1,444 @@
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:"Poppins",sans-serif;background: linear-gradient(#e3fbe4,#daf7e6);}
-
-/* HEADER */
-.hero{
-  height:500px;
-  background: linear-gradient(135deg,#4caf50,#74e39d);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-  padding-bottom:60px;
+/* --- Global & Typography Setup (Stripe Style) --- */
+:root {
+    --color-primary: #007bff; /* Vibrant Blue Accent */
+    --color-secondary: #28a745; /* Vibrant Green Accent */
+    --color-text: #333;
+    --color-background: #f7f9fc; /* Off-white for clean look */
+    --color-card-bg: #fff;
+    --color-light-gray: #e9ecef;
+    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-.title{
-  font-size:3.2rem;
-  font-weight:800;
-  color:white;
-  text-shadow:0 5px 20px rgba(0,0,0,0.4);
-  z-index:10;
-  position:relative;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.subtitle{
-  font-size:1.3rem;
-  color:white;
-  margin-top:5px;
-  z-index:10;
-  position:relative;
-  opacity:0.9;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    overflow-x: hidden;
 }
 
-/* CITY ANIMATION */
-.city-animation{
-  position:absolute;
-  width:350px;
-  height:350px;
-  bottom:10px;
-  z-index:1;
-  left:50%;
-  transform:translateX(-50%);
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.circle-plate{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  border:6px solid rgba(255,255,255,0.4);
-  position:absolute;
-  top:0; left:0;
-  animation: rotatePlate 15s linear infinite;
+a:hover {
+    color: var(--color-secondary);
 }
 
-.building{
-  width:35px;
-  border-radius:6px;
-  position:absolute;
-  bottom:50px;
-  background: linear-gradient(#b2ffb4,#4ecf64);
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  animation: floatBuilding 3s ease-in-out infinite alternate;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.b1{ left:40px; height:90px; animation-delay:0s; }
-.b2{ left:140px; height:70px; animation-delay:0.5s; }
-.b3{ right:50px; height:100px; animation-delay:1s; }
-
-.tree{
-  width:25px;
-  height:25px;
-  border-radius:50%;
-  background:#2ecc71;
-  position:absolute;
-  bottom:30px;
-  box-shadow:0 3px 5px rgba(0,0,0,0.3);
-  animation:swayTree 3s ease-in-out infinite alternate;
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-subtle);
 }
 
-.t1{ left:20px; }
-.t2{ right:40px; }
-.t3{ left:150px; }
-
-.cloud{
-  position:absolute;
-  width:100px;
-  height:35px;
-  background:white;
-  border-radius:50px;
-  opacity:0.7;
-  filter:blur(1px);
+.btn:hover {
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
 }
 
-.c1{ top:20px; left:-150px; animation:cloudMove 25s linear infinite; }
-.c2{ top:60px; left:-200px; animation:cloudMove 35s linear infinite; }
-
-/* ANIMATIONS */
-@keyframes rotatePlate{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-@keyframes floatBuilding{0%{transform:translateY(0);}100%{transform:translateY(-15px);}}
-@keyframes swayTree{0%{transform:rotate(0deg);}100%{transform:rotate(5deg);}}
-@keyframes cloudMove{0%{transform:translateX(0);}100%{transform:translateX(150vw);}}
-
-/* FEATURES */
-.features{padding:50px 20px; text-align:center;}
-.features h2{font-size:28px;color:#046f27;margin-bottom:30px;}
-.features-container{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;}
-.feature-card{
-  background:white;
-  width:250px;
-  padding:25px;
-  border-radius:18px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.1);
-  transition:0.3s;
+/* --- 1. Header Section (Animated) --- */
+.hero-header {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); /* Light Sky Gradient */
+    overflow: hidden; /* Crucial for animation containment */
 }
-.feature-card:hover{transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.15);}
-.feature-icon{width:50px;margin-bottom:15px;}
 
-/* TEAM SECTION */
-.team-section{padding:50px 20px;text-align:center;}
-.team-section h2{font-size:28px;color:#046f27;margin-bottom:25px;}
-.team-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-
-/* CARD */
-.card{
-  background:white;
-  width:220px;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.1);
-  transition:0.3s;
-  text-align:center;
+.header-content {
+    position: relative;
+    z-index: 10; /* Ensure text is on top of animation */
+    color: var(--color-text);
+    padding: 20px;
 }
-.card:hover{transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.15);}
-.avatar{width:70px;margin:0 auto;}
-.logo{width:30px;margin:10px auto; display:block;}
-.usn{color:#555;font-size:14px;margin:6px 0;}
-.btn{display:inline-block;margin-top:10px;background:#1ec93f;color:white;padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:600;transition:0.2s;}
-.btn:hover{background:#0ca52d;}
 
-/* FOOTER */
-footer{background:#0a5b1b;color:white;text-align:center;padding:25px 10px;margin-top:40px;border-radius:20px 20px 0 0;}
-footer .copy{margin-top:10px;opacity:0.8;}
-footer .guide{margin-top:5px;font-weight:600;}
+.header-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.header-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #444;
+}
+
+/* --- Animated City Container & Platform --- */
+.animated-city-container {
+    position: absolute;
+    width: 450px; /* Base size */
+    height: 450px;
+    bottom: -100px; /* Position it lower */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: 5;
+    /* subtle float animation for the entire city */
+    animation: cityFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes cityFloat {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-15px); }
+}
+
+.city-platform {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #5cb85c 0%, #34a853 40%, #1c7430 100%); /* Greenery/Road */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5), 0 0 20px #000;
+    position: relative;
+    /* Optional Subtle Glowing Road Effect */
+    box-shadow: 0 0 15px var(--color-primary);
+    animation: subtleGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes subtleGlow {
+    0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px var(--color-secondary); }
+    100% { box-shadow: 0 0 15px rgba(0, 123, 255, 1), 0 0 30px var(--color-secondary); }
+}
+
+/* --- Floating Buildings & Elements (Absolute positioning) --- */
+.city-element {
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    padding: 5px;
+    border-radius: 5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Sway/Float animation */
+    animation: elementSway 5s ease-in-out infinite alternate;
+}
+
+@keyframes elementSway {
+    0% { transform: translateY(0) rotate(1deg); }
+    100% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+/* Positioning elements along the circle */
+.building-1 { top: 10%; left: 20%; font-size: 3rem; animation-delay: 0s; }
+.building-2 { top: 30%; right: 10%; font-size: 2.5rem; animation-delay: 1.5s; }
+.building-3 { bottom: 20%; left: 30%; font-size: 3.5rem; animation-delay: 3s; }
+.building-4 { top: 50%; left: 5%; font-size: 2rem; animation-delay: 4.5s; }
+.tree-1 { top: 15%; right: 35%; color: var(--color-secondary); font-size: 2.8rem; animation-delay: 1s; }
+.tree-2 { bottom: 10%; right: 20%; color: var(--color-secondary); font-size: 2.2rem; animation-delay: 2.5s; }
+
+
+/* --- Moving Clouds --- */
+.cloud {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background: #fff;
+    border-radius: 40px;
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: moveClouds linear infinite;
+    z-index: 1;
+}
+
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 10px;
+}
+
+.cloud::after {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    right: 10px;
+}
+
+.cloud-1 { top: 10%; left: 10%; animation-duration: 25s; }
+.cloud-2 { top: 30%; left: 50%; animation-duration: 30s; animation-delay: 10s; }
+.cloud-3 { top: 20%; left: 80%; animation-duration: 35s; animation-delay: 5s; }
+
+@keyframes moveClouds {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100vw); }
+}
+
+/* --- Section Styling --- */
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+
+/* --- 3. Features Section --- */
+.features-section {
+    background-color: var(--color-light-gray);
+    padding-bottom: 120px; /* Extra padding for visual separation */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+    border-left: 5px solid var(--color-secondary);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* JS Fade-in on Scroll Effect (Initial state) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- 2. Team Section --- */
+.team-section {
+    background-color: var(--color-card-bg);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background: var(--color-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover Animation (Lift, Shadow, Glow) */
+.team-card.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover), 0 0 20px rgba(0, 123, 255, 0.4); /* subtle blue glow */
+}
+
+.avatar-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+}
+
+.team-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-primary);
+}
+
+.member-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-secondary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 3px solid var(--color-background);
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-icon {
+    transform: rotate(360deg);
+}
+
+.member-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.member-usn {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+
+/* --- 4. Footer Section --- */
+.main-footer {
+    background-color: #f0fdf4; /* Subtle greenery background */
+    padding: 40px 0;
+    border-top: 1px solid #d4edda;
+    color: #333;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-info, .footer-copyright {
+    flex-basis: 45%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-info h3 {
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.footer-info p, .footer-copyright p {
+    margin: 5px 0;
+}
+
+.guide-info {
+    font-style: italic;
+    margin-top: 10px !important;
+}
+
+.footer-copyright {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 992px) {
+    .header-title {
+        font-size: 3rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .animated-city-container {
+        width: 350px;
+        height: 350px;
+        bottom: -70px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header Content */
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* City Animation Scaling */
+    .animated-city-container {
+        width: 280px;
+        height: 280px;
+        bottom: -50px;
+    }
+    
+    .city-element {
+        font-size: 1.5rem;
+    }
+
+    /* Footer Reflow */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .footer-copyright {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 40px 0;
+    }
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+}
