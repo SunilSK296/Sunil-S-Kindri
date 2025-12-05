@@ -3,83 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Leap // Data Hub</title>
+    <title>Aethelburg City: The Circular Vision</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background-grid"></div>
-    <div class="background-stars"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+    <div class="background-scanlines"></div>
+    <div class="background-grid-pattern"></div>
 
     <header class="main-header">
-        <div class="logo">QUANTUM LEAP</div>
-        <nav>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#flux">Data Flux</a>
-            <a href="#network">Network</a>
+        <div class="logo">AETHELBURG CITY</div>
+        <nav class="main-nav">
+            <a href="#vision">Our Vision</a>
+            <a href="#features">Key Features</a>
+            <a href="#sustainability">Sustainability</a>
+            <a href="#team">Team</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main class="content-wrapper">
-        <section id="hero" class="hero-section glass-card">
-            <h1 class="hero-title">INITIATING DATA TRANSFER SEQUENCE</h1>
-            <p class="hero-subtitle">Visualizing the flow of complex systems with zero latency.</p>
-            <button class="cta-button">Access Control Panel <i class="fas fa-arrow-right"></i></button>
+    <main>
+        <section id="hero-blueprint" class="hero-section">
+            <div class="blueprint-animation-container">
+                <div class="city-ring city-ring-outer"></div>
+                <div class="city-ring city-ring-middle"></div>
+                <div class="city-ring city-ring-inner"></div>
+                <div class="city-core"></div>
+                
+                <div class="city-zone zone-1"></div>
+                <div class="city-zone zone-2"></div>
+                <div class="city-zone zone-3"></div>
+                <div class="city-zone zone-4"></div>
+
+                <div class="city-detail detail-1"><i class="fas fa-building"></i></div>
+                <div class="city-detail detail-2"><i class="fas fa-seedling"></i></div>
+                <div class="city-detail detail-3"><i class="fas fa-car-side"></i></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">SMART CITY DESIGN: AETHELBURG</h1>
+                <p class="hero-subtitle">Circular • Sustainable • Future Ready. Blueprinting Tomorrow's Urban Harmony.</p>
+                <a href="#vision" class="cta-button">Explore the Vision <i class="fas fa-arrow-down animate-pulse"></i></a>
+            </div>
         </section>
 
-        <section id="flux" class="flux-section">
-            <h2>Data Flux Channels</h2>
-            <div class="flux-grid">
-                <div class="data-module module-a">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Real-time Synthesis</h3>
-                    <p>Continuous aggregation and pattern recognition across parallel streams.</p>
-                    <div class="signal-animation"></div>
-                </div>
-                <div class="data-module module-b">
-                    <i class="fas fa-sitemap"></i>
-                    <h3>Network Topology</h3>
-                    <p>Interactive mapping of global connections and infrastructure dependencies.</p>
-                    <div class="signal-animation"></div>
-                </div>
-                <div class="data-module module-c">
-                    <i class="fas fa-lock"></i>
-                    <h3>Encryption Integrity</h3>
-                    <p>Monitoring quantum-level security protocols and intrusion detection metrics.</p>
-                    <div class="signal-animation"></div>
+        <section id="vision" class="section glass-effect">
+            <div class="container">
+                <h2>Our Vision: The Aethelburg Blueprint</h2>
+                <p class="section-description">Aethelburg is not just a city; it's a living ecosystem designed from the ground up to integrate technology, nature, and human well-being into a perfectly circular paradigm. Every element, from energy production to waste management, forms a closed-loop system.</p>
+                <div class="vision-grid">
+                    <div class="vision-card fade-in">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Global Impact</h3>
+                        <p>A scalable model for urban development, addressing climate change and resource scarcity.</p>
+                    </div>
+                    <div class="vision-card fade-in">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Innovation Hub</h3>
+                        <p>Fostering cutting-edge research and development in AI, IoT, and green technologies.</p>
+                    </div>
+                    <div class="vision-card fade-in">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Citizen Centric</h3>
+                        <p>Enhancing quality of life through smart infrastructure, healthcare, and community spaces.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="network" class="metrics-section">
-            <h2>System Metrics</h2>
-            <div class="metrics-container glass-card">
-                <div class="metric-item">
-                    <span class="metric-value" data-target="98.5">0.0</span>%
-                    <p class="metric-label">Uptime Stability</p>
+        <section id="features" class="section">
+            <div class="container">
+                <h2>Key Smart City Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon"><i class="fas fa-traffic-light glowing-icon"></i></div>
+                        <h3>Optimized Traffic Flow</h3>
+                        <p>AI-driven traffic management, autonomous vehicle integration, and dynamic routing to eliminate congestion.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon"><i class="fas fa-solar-panel glowing-icon"></i></div>
+                        <h3>Net-Zero Energy Grid</h3>
+                        <p>100% renewable energy sources with smart grid distribution, minimizing carbon footprint.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon"><i class="fas fa-home glowing-icon"></i></div>
+                        <h3>Intelligent Infrastructure</h3>
+                        <p>Smart buildings adapt to environmental conditions and occupant needs, maximizing efficiency.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon"><i class="fas fa-robot glowing-icon"></i></div>
+                        <h3>Integrated IoT Network</h3>
+                        <p>Seamless connectivity for public services, waste management, and real-time environmental monitoring.</p>
+                    </div>
                 </div>
-                <div class="metric-item">
-                    <span class="metric-value" data-target="42000">0</span> P/s
-                    <p class="metric-label">Data Packets / Sec</p>
+            </div>
+        </section>
+
+        <section id="sustainability" class="section glass-effect">
+            <div class="container">
+                <h2>Sustainability Metrics</h2>
+                <p class="section-description">Tracking our commitment to a greener future with real-time data.</p>
+                <div class="metrics-grid">
+                    <div class="metric-item animate-on-scroll">
+                        <h3>Renewable Energy Usage</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="--progress: 92%;"><span>92%</span></div>
+                        </div>
+                        <p>Powered primarily by solar, wind, and geothermal sources.</p>
+                    </div>
+                    <div class="metric-item animate-on-scroll">
+                        <h3>Waste Diversion Rate</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="--progress: 85%;"><span>85%</span></div>
+                        </div>
+                        <p>Aggressive recycling and composting programs reduce landfill impact.</p>
+                    </div>
+                    <div class="metric-item animate-on-scroll">
+                        <h3>Green Space Per Capita</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="--progress: 78%;"><span>78%</span></div>
+                        </div>
+                        <p>Extensive parks, vertical gardens, and urban farms integrated throughout.</p>
+                    </div>
                 </div>
-                <div class="metric-item">
-                    <span class="metric-value" data-target="7">0</span> ms
-                    <p class="metric-label">Average Latency</p>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="container">
+                <h2>Our Design Team</h2>
+                <div class="team-grid">
+                    <div class="team-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/150/00bcd4/FFFFFF?text=A.S" alt="Anya Sharma" class="team-avatar">
+                        <h3 class="member-name">Anya Sharma</h3>
+                        <p class="member-usn">1DS22IS001</p>
+                        <span class="role-badge"><i class="fas fa-laptop-code"></i> Lead Architect</span>
+                        <a href="#" class="btn-profile">View Profile</a>
+                    </div>
+                    <div class="team-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/150/4CAF50/FFFFFF?text=B.C" alt="Ben Carter" class="team-avatar">
+                        <h3 class="member-name">Ben Carter</h3>
+                        <p class="member-usn">1DS22IS002</p>
+                        <span class="role-badge"><i class="fas fa-leaf"></i> Eco-Systems Spec.</span>
+                        <a href="#" class="btn-profile">View Profile</a>
+                    </div>
+                    <div class="team-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/150/FFC107/333333?text=C.L" alt="Chloe Lee" class="team-avatar">
+                        <h3 class="member-name">Chloe Lee</h3>
+                        <p class="member-usn">1DS22IS003</p>
+                        <span class="role-badge"><i class="fas fa-robot"></i> IoT & AI Integrator</span>
+                        <a href="#" class="btn-profile">View Profile</a>
+                    </div>
+                    <div class="team-card animate-on-scroll">
+                        <img src="https://via.placeholder.com/150/f44336/FFFFFF?text=D.P" alt="Dev Patel" class="team-avatar">
+                        <h3 class="member-name">Dev Patel</h3>
+                        <p class="member-usn">1DS22IS004</p>
+                        <span class="role-badge"><i class="fas fa-road"></i> Urban Planner</span>
+                        <a href="#" class="btn-profile">View Profile</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <p>Quantum Leap Project // FTL Data Corp. &copy; 2077</p>
-        <div class="footer-links">
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-github"></i>
-            <i class="fas fa-envelope"></i>
+    <footer id="contact" class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Contact Project Lead</h3>
+                <p><i class="fas fa-envelope glowing-icon"></i> <a href="mailto:contact@aethelburg.com">contact@aethelburg.com</a></p>
+                <p><i class="fas fa-phone glowing-icon"></i> +1 234 567 8900</p>
+            </div>
+            <div class="footer-col">
+                <h3>University Project</h3>
+                <p>Project Guide: Prof. Anya Petrova</p>
+                <p>Department of Smart Systems Engineering</p>
+            </div>
+            <div class="footer-col">
+                <p>&copy; 2024 Aethelburg City Design. All Rights Reserved.</p>
+                <p>Blueprint for a Sustainable Future.</p>
+            </div>
         </div>
     </footer>
 
