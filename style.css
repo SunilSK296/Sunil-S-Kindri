@@ -1,13 +1,12 @@
-/* --- Global & Typography Setup (Stripe Style) --- */
+/* --- Variables & Global Reset --- */
 :root {
-    --color-primary: #007bff; /* Vibrant Blue Accent */
-    --color-secondary: #28a745; /* Vibrant Green Accent */
-    --color-text: #333;
-    --color-background: #f7f9fc; /* Off-white for clean look */
-    --color-card-bg: #fff;
-    --color-light-gray: #e9ecef;
-    --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --color-bg-dark: #0a0e1a;
+    --color-primary-glow: #00ffff; /* Cyan Glow */
+    --color-secondary-glow: #ff00ff; /* Magenta Accent */
+    --color-text-light: #e0f7fa;
+    --color-glass-border: rgba(0, 255, 255, 0.3);
+    --animation-speed-slow: 40s;
+    --animation-speed-medium: 20s;
 }
 
 * {
@@ -17,428 +16,342 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Consolas', 'Fira Code', monospace;
     line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-background);
+    color: var(--color-text-light);
+    background-color: var(--color-bg-dark);
     overflow-x: hidden;
+    position: relative;
 }
 
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--color-secondary);
-}
-
-.container {
-    max-width: 1200px;
+.content-wrapper {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* --- Buttons --- */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--color-primary);
-    color: white;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-subtle);
-}
-
-.btn:hover {
-    background-color: var(--color-secondary);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-}
-
-/* --- 1. Header Section (Animated) --- */
-.hero-header {
-    position: relative;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); /* Light Sky Gradient */
-    overflow: hidden; /* Crucial for animation containment */
-}
-
-.header-content {
-    position: relative;
-    z-index: 10; /* Ensure text is on top of animation */
-    color: var(--color-text);
     padding: 20px;
+    position: relative;
+    z-index: 10; /* Ensures content is above background */
 }
 
-.header-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-}
-
-.header-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #444;
-}
-
-/* --- Animated City Container & Platform --- */
-.animated-city-container {
-    position: absolute;
-    width: 450px; /* Base size */
-    height: 450px;
-    bottom: -100px; /* Position it lower */
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    z-index: 5;
-    /* subtle float animation for the entire city */
-    animation: cityFloat 8s ease-in-out infinite alternate;
-}
-
-@keyframes cityFloat {
-    0% { transform: translateX(-50%) translateY(0); }
-    100% { transform: translateX(-50%) translateY(-15px); }
-}
-
-.city-platform {
+/* --- Background Animations --- */
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle, #5cb85c 0%, #34a853 40%, #1c7430 100%); /* Greenery/Road */
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5), 0 0 20px #000;
-    position: relative;
-    /* Optional Subtle Glowing Road Effect */
-    box-shadow: 0 0 15px var(--color-primary);
-    animation: subtleGlow 4s ease-in-out infinite alternate;
-}
-
-@keyframes subtleGlow {
-    0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px var(--color-secondary); }
-    100% { box-shadow: 0 0 15px rgba(0, 123, 255, 1), 0 0 30px var(--color-secondary); }
-}
-
-/* --- Floating Buildings & Elements (Absolute positioning) --- */
-.city-element {
-    position: absolute;
-    color: #fff;
-    font-size: 2rem;
-    padding: 5px;
-    border-radius: 5px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    /* Sway/Float animation */
-    animation: elementSway 5s ease-in-out infinite alternate;
-}
-
-@keyframes elementSway {
-    0% { transform: translateY(0) rotate(1deg); }
-    100% { transform: translateY(-5px) rotate(-1deg); }
-}
-
-/* Positioning elements along the circle */
-.building-1 { top: 10%; left: 20%; font-size: 3rem; animation-delay: 0s; }
-.building-2 { top: 30%; right: 10%; font-size: 2.5rem; animation-delay: 1.5s; }
-.building-3 { bottom: 20%; left: 30%; font-size: 3.5rem; animation-delay: 3s; }
-.building-4 { top: 50%; left: 5%; font-size: 2rem; animation-delay: 4.5s; }
-.tree-1 { top: 15%; right: 35%; color: var(--color-secondary); font-size: 2.8rem; animation-delay: 1s; }
-.tree-2 { bottom: 10%; right: 20%; color: var(--color-secondary); font-size: 2.2rem; animation-delay: 2.5s; }
-
-
-/* --- Moving Clouds --- */
-.cloud {
-    position: absolute;
-    width: 80px;
-    height: 30px;
-    background: #fff;
-    border-radius: 40px;
-    opacity: 0.8;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    animation: moveClouds linear infinite;
+    background-image: linear-gradient(0deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
     z-index: 1;
+    animation: grid-pan var(--animation-speed-medium) linear infinite;
 }
 
-.cloud::before, .cloud::after {
+@keyframes grid-pan {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+}
+
+.background-stars {
+    position: fixed;
+    width: 3000px;
+    height: 3000px;
+    top: -1000px;
+    left: -1000px;
+    background: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 100px 100px;
+    opacity: 0.05;
+    z-index: 2;
+    animation: rotate-stars var(--animation-speed-slow) linear infinite;
+}
+
+@keyframes rotate-stars {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Glowing Orbs (Abstract Animation) --- */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: 3;
+    animation: orb-move var(--animation-speed-slow) ease-in-out infinite alternate;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-primary-glow);
+    top: 5%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 200px;
+    height: 200px;
+    background: var(--color-secondary-glow);
+    bottom: 5%;
+    right: 15%;
+    animation-duration: 30s;
+    animation-delay: 5s;
+}
+
+@keyframes orb-move {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(300px, -100px) scale(1.1); }
+    100% { transform: translate(50px, 100px) scale(0.9); }
+}
+
+/* --- Glassmorphism Style --- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 30px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 14, 26, 0.9); /* Semi-transparent sticky header */
+    backdrop-filter: blur(8px);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary-glow);
+    text-shadow: 0 0 5px var(--color-primary-glow);
+}
+
+nav a {
+    color: var(--color-text-light);
+    margin-left: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+nav a::after {
     content: '';
     position: absolute;
-    background: #fff;
-    border-radius: 50%;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--color-secondary-glow);
+    transition: width 0.3s ease;
 }
 
-.cloud::before {
-    width: 40px;
-    height: 40px;
-    top: -20px;
-    left: 10px;
+nav a:hover::after {
+    width: 100%;
 }
 
-.cloud::after {
-    width: 50px;
-    height: 50px;
-    top: -20px;
-    right: 10px;
+/* --- Hero Section --- */
+.hero-section {
+    text-align: center;
+    padding: 100px 50px;
+    margin-top: 50px;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-out;
 }
 
-.cloud-1 { top: 10%; left: 10%; animation-duration: 25s; }
-.cloud-2 { top: 30%; left: 50%; animation-duration: 30s; animation-delay: 10s; }
-.cloud-3 { top: 20%; left: 80%; animation-duration: 35s; animation-delay: 5s; }
-
-@keyframes moveClouds {
-    0% { transform: translateX(100vw); }
-    100% { transform: translateX(-100vw); }
+.hero-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--color-primary-glow);
+    animation: textGlow 3s infinite alternate;
 }
 
-/* --- Section Styling --- */
-.section {
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-secondary-glow);
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, var(--color-primary-glow), var(--color-secondary-glow));
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: var(--color-bg-dark);
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 5px var(--color-primary-glow); }
+    100% { text-shadow: 0 0 20px var(--color-primary-glow); }
+}
+
+/* --- Flux Section --- */
+.flux-section {
     padding: 80px 0;
     text-align: center;
 }
 
-.section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: var(--color-primary);
+.flux-section h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: var(--color-secondary-glow);
 }
 
-/* --- 3. Features Section --- */
-.features-section {
-    background-color: var(--color-light-gray);
-    padding-bottom: 120px; /* Extra padding for visual separation */
-}
-
-.features-grid {
+.flux-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.feature-card {
-    background: var(--color-card-bg);
+.data-module {
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-subtle);
-    transition: all 0.3s ease;
-    text-align: left;
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 0, 255, 0.05);
+    transition: background 0.5s ease, border-color 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.feature-card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-5px);
-    border-left: 5px solid var(--color-secondary);
+.data-module:hover {
+    background: rgba(255, 0, 255, 0.15);
+    border-color: var(--color-secondary-glow);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
 }
 
-.feature-icon {
+.data-module i {
     font-size: 3rem;
-    color: var(--color-secondary);
+    color: var(--color-secondary-glow);
     margin-bottom: 15px;
 }
 
-.feature-card h3 {
-    font-size: 1.5rem;
+.data-module h3 {
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-/* JS Fade-in on Scroll Effect (Initial state) */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* --- 2. Team Section --- */
-.team-section {
-    background-color: var(--color-card-bg);
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.team-card {
-    background: var(--color-background);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-subtle);
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-/* Hover Animation (Lift, Shadow, Glow) */
-.team-card.hover-lift:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover), 0 0 20px rgba(0, 123, 255, 0.4); /* subtle blue glow */
-}
-
-.avatar-container {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 15px;
-}
-
-.team-avatar {
+/* Signal Animation inside Modules */
+.signal-animation {
+    height: 2px;
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--color-primary);
-}
-
-.member-icon {
     position: absolute;
     bottom: 0;
-    right: 0;
-    background-color: var(--color-secondary);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    left: 0;
+    background: linear-gradient(90deg, transparent, var(--color-primary-glow), transparent);
+    animation: signalFlow 3s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes signalFlow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* --- Metrics Section --- */
+.metrics-section {
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.metrics-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--color-primary-glow);
+}
+
+.metrics-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 50px;
+    margin: 0 10%;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-primary-glow);
+    display: block;
+    text-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.footer-links i {
     font-size: 1.2rem;
-    border: 3px solid var(--color-background);
-    transform: rotate(0deg);
-    transition: transform 0.5s ease;
+    margin: 0 10px;
+    color: #555;
+    transition: color 0.3s ease;
 }
 
-.team-card:hover .member-icon {
-    transform: rotate(360deg);
+.footer-links i:hover {
+    color: var(--color-primary-glow);
+    cursor: pointer;
 }
 
-.member-name {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.member-usn {
-    color: #6c757d;
-    margin-bottom: 20px;
-}
-
-
-/* --- 4. Footer Section --- */
-.main-footer {
-    background-color: #f0fdf4; /* Subtle greenery background */
-    padding: 40px 0;
-    border-top: 1px solid #d4edda;
-    color: #333;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.footer-info, .footer-copyright {
-    flex-basis: 45%;
-    min-width: 300px;
-    margin-bottom: 20px;
-}
-
-.footer-info h3 {
-    color: var(--color-secondary);
-    margin-bottom: 15px;
-}
-
-.footer-info p, .footer-copyright p {
-    margin: 5px 0;
-}
-
-.guide-info {
-    font-style: italic;
-    margin-top: 10px !important;
-}
-
-.footer-copyright {
-    text-align: right;
-    font-size: 0.9rem;
-}
-
-/* --- 6. Responsive Design --- */
-@media (max-width: 992px) {
-    .header-title {
-        font-size: 3rem;
-    }
-
-    .header-subtitle {
-        font-size: 1.3rem;
-    }
-
-    .animated-city-container {
-        width: 350px;
-        height: 350px;
-        bottom: -70px;
-    }
-}
-
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
-    /* Header Content */
-    .header-title {
-        font-size: 2.5rem;
-    }
-
-    .header-subtitle {
-        font-size: 1.1rem;
-    }
-
-    /* City Animation Scaling */
-    .animated-city-container {
-        width: 280px;
-        height: 280px;
-        bottom: -50px;
-    }
-    
-    .city-element {
-        font-size: 1.5rem;
-    }
-
-    /* Footer Reflow */
-    .footer-content {
+    .main-header {
         flex-direction: column;
-        text-align: center;
     }
-
-    .footer-info, .footer-copyright {
-        flex-basis: 100%;
-        text-align: center;
+    nav {
+        margin-top: 15px;
     }
-
-    .footer-copyright {
-        margin-top: 20px;
+    nav a {
+        margin: 0 10px;
     }
-}
-
-@media (max-width: 480px) {
-    .section {
-        padding: 40px 0;
-    }
-    .header-title {
+    .hero-title {
         font-size: 2rem;
     }
-
-    .header-subtitle {
-        font-size: 1rem;
+    .metrics-container {
+        flex-direction: column;
+        gap: 30px;
+        margin: 0 5%;
     }
+    .metric-value {
+        font-size: 2.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
