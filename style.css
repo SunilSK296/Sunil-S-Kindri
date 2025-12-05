@@ -1,172 +1,180 @@
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-body{
-    font-family: "Inter", sans-serif;
-    background: linear-gradient(#e9ffe9, #f7fff7);
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
 }
 
+body {
+    background: linear-gradient(#daf7e6, #e9ffe2);
+    overflow-x: hidden;
+}
 
-
-
-/* ================= HERO ================= */
-.hero{
-    height: 65vh;
-    background: linear-gradient(135deg, #4caf50, #74e39d);
+/* HEADER */
+header {
+    height: 420px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+}
+
+/* 3D CITY */
+.city-3d {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    top: 40px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.plate {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #b0ffc7, #4ecf64);
+    position: absolute;
+    z-index: 1;
+    filter: blur(1px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+/* 3D BUILDINGS */
+.building {
+    width: 40px;
+    height: 80px;
+    background: linear-gradient(#d8ffe1, #7ef791);
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    animation: rise 3s infinite alternate;
+}
+
+.b1 { left: 30px; top: 100px; height: 90px; animation-delay: 0s; }
+.b2 { right: 40px; top: 110px; height: 70px; animation-delay: .4s; }
+.b3 { left: 120px; top: 40px; height: 100px; animation-delay: .8s; }
+.b4 { left: 90px; bottom: 10px; height: 60px; animation-delay: 1.2s; }
+.b5 { right: 90px; bottom: 20px; height: 85px; animation-delay: 1.6s; }
+
+/* ANIMATIONS */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rise {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* TITLE */
+.title {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(45deg, #0e8013, #1ac932);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #2d6b2f;
+    margin-top: 6px;
+}
+
+/* TEAM */
+.team-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #046f27;
+}
+
+.team-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 230px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
     position: relative;
-    overflow: hidden;
-    color:white;
-    text-align:center;
 }
 
-.main-title{
-    font-size:3.8rem;
-    font-weight:800;
-    text-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
-.sub-title{
-    font-size:1.3rem;
-    margin-top:10px;
-    opacity:0.9;
+.card:hover {
+    transform: translateY(-10px);
 }
 
-
-
-/* ================= CIRCULAR SMART CITY ANIMATION ================= */
-.city-circle{
-    width:260px;
-    height:260px;
-    border-radius:50%;
-    border:6px solid rgba(255,255,255,0.7);
-    position:absolute;
-    bottom:-60px;
-    animation: rotateCity 16s linear infinite;
+/* Avatar */
+.avatar {
+    width: 75px;
+    display: block;
+    margin: 0 auto;
 }
 
-@keyframes rotateCity{
-    0%{ transform: rotate(0deg); }
-    100%{ transform: rotate(360deg); }
+/* Logo */
+.logo {
+    width: 35px;
+    display: block;
+    margin: 10px auto;
 }
 
-/* Buildings */
-.building{
-    width:40px;
-    height:60px;
-    background:white;
-    border-radius:6px;
-    position:absolute;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-.b1{ top:-20px; left:110px; }
-.b2{ top:90px; right:-20px; }
-.b3{ bottom:-20px; left:110px; }
-
-/* Trees */
-.tree{
-    width:26px;
-    height:26px;
-    background:#2ecc71;
-    position:absolute;
-    border-radius:50%;
-    box-shadow:0 2px 6px rgba(0,0,0,0.3);
-}
-.t1{ left:-10px; top:80px; }
-.t2{ left:200px; top:180px; }
-.t3{ left:20px; top:180px; }
-
-/* Road ring */
-.road{
-    width:200px;
-    height:200px;
-    border:4px dashed rgba(255,255,255,0.7);
-    border-radius:50%;
-    position:absolute;
-    top:30px;
-    left:30px;
+/* USN */
+.usn {
+    color: #555;
+    font-size: 14px;
+    margin-top: 6px;
 }
 
-
-
-/* ================= TEAM SECTION ================= */
-.team-section{
-    padding:60px 20px;
-    text-align:center;
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #1ec93f;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
-.section-title{
-    font-size:2.4rem;
-    font-weight:700;
-    margin-bottom:40px;
-    color:#2e2e2e;
+.btn:hover {
+    background: #0ca52d;
 }
 
-.team-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:25px;
-    padding:0 40px;
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    background: #0a5b1b;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 20px 20px 0 0;
 }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.10);
-    text-decoration:none;
-    color:#444;
-    transition:0.3s;
+footer .copy {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.8;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 12px 30px rgba(0,0,0,0.15);
-}
-
-.member-logo{
-    width:70px;
-    margin-bottom:15px;
-}
-
-.usn{
-    opacity:0.8;
-    margin:8px 0;
-}
-
-.btn{
-    margin-top:15px;
-    padding:12px 20px;
-    background:#4CAF50;
-    border-radius:10px;
-    color:white;
-    border:none;
-    cursor:pointer;
-    font-size:1rem;
-}
-
-.btn:hover{
-    background:#3b9d45;
-}
-
-
-
-
-/* ================= FOOTER ================= */
-.footer{
-    margin-top:60px;
-    padding:40px;
-    background:#2d472d;
-    color:white;
-    text-align:center;
-}
-
-.copy{
-    opacity:0.8;
-    margin-top:25px;
+footer .guide {
+    margin-top: 10px;
+    font-weight: 600;
 }
