@@ -1,211 +1,154 @@
-/* --- Variables & Global Reset --- */
-:root {
-    --color-primary: #635bff; /* Stripe's main blue/purple */
-    --color-secondary: #00d2ff; /* A vibrant light blue accent */
-    --color-text-dark: #1e2022;
-    --color-text-light: #42474b;
-    --color-background-light: #f6f9fc; /* Off-white, soft background */
-    --color-background-white: #ffffff;
-    --color-border: #e6ebf1;
-}
-
+/* ===== BASIC RESET ===== */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
-/* --- Body & Layout --- */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--color-background-light);
-    color: var(--color-text-dark);
-    display: flex;
-    min-height: 100vh; /* Ensures content fills the height */
+    font-family: "Inter", sans-serif;
+    background: #f8f9ff;
 }
 
-/* --- Sidebar Styling (Navigation) --- */
-.sidebar {
-    width: 250px; /* Slightly wider sidebar */
-    background: var(--color-background-white);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding-top: 40px;
-    border-right: 1px solid var(--color-border);
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.03);
-}
 
-.sidebar-title {
-    text-align: center;
-    color: var(--color-primary);
-    margin-bottom: 35px;
-    font-size: 24px;
-    font-weight: 700;
-    padding: 0 15px;
-}
-
-.sidebar a {
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 55vh;
+    background: linear-gradient(135deg, #5b2cff, #6ee7ff);
+    color: white;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 14px 30px;
-    color: var(--color-text-light);
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: 0.2s;
-    border-left: 4px solid transparent; /* Placeholder for active state */
+    justify-content: center;
 }
 
-.sidebar a:hover {
-    background: var(--color-border);
-    color: var(--color-primary);
+.title {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.sidebar a.active-link {
-    background: #e0eaff; /* Light blue background for active */
-    border-left: 4px solid var(--color-primary);
-    color: var(--color-primary);
-    font-weight: 600;
-}
-
-/* --- Main Content --- */
-.main {
-    margin-left: 250px;
-    padding: 50px 70px; /* More padding for a spacious feel */
-    width: calc(100% - 250px);
-}
-
-/* --- Hero Section (Title) --- */
-.hero {
+.subtitle {
     text-align: center;
-    margin-bottom: 40px;
-}
-
-h1 {
-    font-size: 56px;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    line-height: 1.1;
-    letter-spacing: -1px; /* Tighter letter spacing for a modern look */
-}
-
-.tagline {
-    font-size: 22px;
     margin-top: 10px;
-    color: var(--color-text-light);
-    font-weight: 400;
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-/* --- Card Styling --- */
-.card {
-    background: var(--color-background-white);
-    padding: 35px;
+/* ===== 3D SHAPES ===== */
+.shape {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    filter: blur(1px);
+    opacity: 0.7;
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Cube */
+.cube {
+    background: #ffffff33;
+    top: 10%;
+    left: 15%;
     border-radius: 12px;
-    margin: 40px auto;
-    width: 90%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.05); /* Soft, elevated shadow */
-    border: 1px solid var(--color-border);
+    transform: rotate(25deg);
 }
 
-.card h2 {
+/* Sphere */
+.sphere {
+    background: radial-gradient(circle, #ffffffaa, #ffffff22);
+    border-radius: 50%;
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+/* Prism */
+.prism {
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 120px solid #ffffff55;
+    bottom: 5%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+    padding: 60px 20px;
     text-align: center;
-    color: var(--color-primary);
+}
+
+.section-title {
+    font-size: 2.5rem;
     font-weight: 700;
-    font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Cards layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: #444;
+    transition: 0.3s;
+    border-top: 6px solid #5b2cff;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
 }
 
 .card p {
-    text-align: center;
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--color-text-dark);
     margin: 8px 0;
+    opacity: 0.8;
 }
 
-.summary-text {
-    text-align: center;
-    font-size: 18px;
-    width: 80%;
-    margin: 0 auto 50px auto;
-    color: var(--color-text-light);
-    line-height: 1.6;
+/* Algorithm Logos */
+.algo-logo {
+    width: 60px;
+    margin-bottom: 10px;
 }
 
-/* --- Table Styling --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border-radius: 8px; /* Rounded corners for the table */
-    overflow: hidden; /* Ensures rounded corners apply to content */
-}
-
-th {
-    background: var(--color-primary);
-    color: white;
-    padding: 15px;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-td {
-    padding: 15px;
-    background: var(--color-background-white);
-    border-bottom: 1px solid var(--color-border);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--color-text-dark);
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-/* --- Button Styling --- */
-.btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 50px;
-    flex-wrap: wrap;
-}
-
+/* Buttons */
 .btn {
-    padding: 14px 28px;
-    border-radius: 8px;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #5b2cff;
     border: none;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.primary-btn {
-    background: var(--color-primary);
     color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.primary-btn:hover {
-    background: #5044e9; /* Slightly darker shade on hover */
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-}
-
-.secondary-btn {
-    background: var(--color-background-white);
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-}
-
-.secondary-btn:hover {
-    background: #f0f3ff; /* Lightest blue on hover */
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+.btn:hover {
+    background: #4318db;
 }
