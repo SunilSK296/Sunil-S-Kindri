@@ -1,60 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Metric Counter Animation
-    const counters = document.querySelectorAll('.metric-value');
+    // --- 1. Fade-in on Scroll Logic (Intersection Observer) ---
 
-    const startCounter = (targetElement) => {
-        const target = parseFloat(targetElement.getAttribute('data-target'));
-        const isDecimal = targetElement.textContent.includes('.');
-        const duration = 2000; // 2 seconds
-        let start = 0;
-        let increment = (target / (duration / 16)); // ~60fps
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll, .vision-card');
+    const metricItems = document.querySelectorAll('.metric-item');
 
-        const updateCounter = () => {
-            start += increment;
-            
-            if (start < target) {
-                targetElement.textContent = isDecimal 
-                    ? start.toFixed(1) 
-                    : Math.ceil(start).toLocaleString();
-                requestAnimationFrame(updateCounter);
-            } else {
-                targetElement.textContent = isDecimal 
-                    ? target.toFixed(1) 
-                    : target.toLocaleString();
-            }
-        };
-        updateCounter();
+    // Configuration for the observer
+    const observerOptions = {
+        root: null, // Use the viewport as the container
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the element is visible
     };
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                startCounter(entry.target);
+                // Add a class that triggers the CSS fade/transform transition
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+
+                // If it's a metric item, start the progress bar animation
+                if (entry.target.classList.contains('metric-item')) {
+                    const progressBar = entry.target.querySelector('.progress-bar');
+                    // CSS is pre-configured with --progress variable, just observing is enough.
+                    // The CSS transition handles the smooth animation of the width.
+                    // No need for complex JS counter animation here.
+                }
+
+                // Stop observing once the animation is triggered
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.7 });
+    }, observerOptions);
 
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
+    // Set initial state and observe all elements
+    elementsToAnimate.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px) scale(0.95)';
+        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+        observer.observe(el);
     });
 
-    // 2. Section Fade-in on Scroll (Optional but recommended)
-    const sections = document.querySelectorAll('.flux-section, .metrics-section');
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(50px)';
-        section.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-        sectionObserver.observe(section);
+    // We observe metric items separately to trigger the progress bar animation implicitly
+    metricItems.forEach(metric => {
+         // The animate-on-scroll handles the main item fade, but we need to ensure the
+         // progress bars start wide when the section is visible.
+         // Since the progress bar CSS already has the transition set on its width,
+         // just being observed with the main group is sufficient for the visual effect.
     });
 });
