@@ -1,191 +1,170 @@
-<!DOCTYPE html>
+<!--
+  smart-traffic-management.html
+  Place this file in your GitHub repo (e.g. root or /docs). Simple, single-file page.
+  Instructions:
+  - Replace image placeholders at paths: images/traffic-1.png, images/traffic-2.png, images/traffic-3.png
+  - To add more main ideas: copy a <section class="project-section"> block and update id/title
+-->
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aethelburg City: The Circular Vision</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design & Business Ideas — Smart City</title>
+  <style>
+    :root{--accent:#2b6cb0;--muted:#666;--bg:#f7fafc;--card:#ffffff}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(90deg,var(--accent),#4c9bd6); color:white; padding:28px 20px}
+    .container{max-width:980px;margin:24px auto;padding:0 18px}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:8px 0 0;opacity:.95}
+    nav.top-nav{display:flex;gap:12px;margin-top:16px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.06)}
+
+    /* section cards */
+    .project-section{background:var(--card);border-radius:12px;padding:18px;margin:18px 0;box-shadow:0 6px 18px rgba(20,20,30,0.06)}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .section-head h2{margin:0;font-size:1.1rem}
+    .meta{color:var(--muted);font-size:0.9rem}
+    ul.clean{padding-left:18px}
+
+    /* images */
+    .image-row{display:flex;gap:12px;margin-top:12px}
+    .image-row img{width:100%;max-width:320px;border-radius:8px;border:1px solid #eceff3;background:#f2f6fb}
+
+    /* responsive */
+    @media (max-width:760px){.image-row{flex-direction:column}.container{padding:0 14px}} 
+
+    footer{max-width:980px;margin:30px auto 60px;padding:0 18px;color:var(--muted);font-size:0.9rem}
+    .hint{background:#fff9db;padding:10px;border-left:4px solid #ffd54f;border-radius:6px}
+    code{background:#f4f7fb;padding:2px 6px;border-radius:6px;font-family:monospace}
+  </style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>Design & Business Ideas — Smart City</h1>
+      <p class="lead">Collection of project concepts. Add more project sections below. (This page is ready to host on GitHub Pages.)</p>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#traffic-management">Traffic Management</a>
+        <a href="#future-projects">Future Projects</a>
+        <a href="#notes">Notes</a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="background-scanlines"></div>
-    <div class="background-grid-pattern"></div>
+  <main class="container">
 
-    <header class="main-header">
-        <div class="logo">AETHELBURG CITY</div>
-        <nav class="main-nav">
-            <a href="#vision">Our Vision</a>
-            <a href="#features">Key Features</a>
-            <a href="#sustainability">Sustainability</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <!-- TRAFFIC MANAGEMENT SECTION (OUTSIDE CONTAINER) -->
+</main>
 
-    <main>
-        <section id="hero-blueprint" class="hero-section">
-            <div class="blueprint-animation-container">
-                <div class="city-ring city-ring-outer"></div>
-                <div class="city-ring city-ring-middle"></div>
-                <div class="city-ring city-ring-inner"></div>
-                <div class="city-core"></div>
-                
-                <div class="city-zone zone-1"></div>
-                <div class="city-zone zone-2"></div>
-                <div class="city-zone zone-3"></div>
-                <div class="city-zone zone-4"></div>
+<section id="traffic-management" class="project-section" style="max-width:980px;margin:24px auto;padding:18px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.06)">
+<h2><b>1. TRAFFIC MANAGEMENT</b></h2>
 
-                <div class="city-detail detail-1"><i class="fas fa-building"></i></div>
-                <div class="city-detail detail-2"><i class="fas fa-seedling"></i></div>
-                <div class="city-detail detail-3"><i class="fas fa-car-side"></i></div>
-            </div>
-            <div class="hero-content">
-                <h1 class="hero-title">SMART CITY DESIGN: AETHELBURG</h1>
-                <p class="hero-subtitle">Circular • Sustainable • Future Ready. Blueprinting Tomorrow's Urban Harmony.</p>
-                <a href="#vision" class="cta-button">Explore the Vision <i class="fas fa-arrow-down animate-pulse"></i></a>
-            </div>
-        </section>
+<p><b>## Concept: Interconnected Smart Traffic Signal Network
 
-        <section id="vision" class="section glass-effect">
-            <div class="container">
-                <h2>Our Vision: The Aethelburg Blueprint</h2>
-                <p class="section-description">Aethelburg is not just a city; it's a living ecosystem designed from the ground up to integrate technology, nature, and human well-being into a perfectly circular paradigm. Every element, from energy production to waste management, forms a closed-loop system.</p>
-                <div class="vision-grid">
-                    <div class="vision-card fade-in">
-                        <i class="fas fa-globe-americas"></i>
-                        <h3>Global Impact</h3>
-                        <p>A scalable model for urban development, addressing climate change and resource scarcity.</p>
-                    </div>
-                    <div class="vision-card fade-in">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Innovation Hub</h3>
-                        <p>Fostering cutting-edge research and development in AI, IoT, and green technologies.</p>
-                    </div>
-                    <div class="vision-card fade-in">
-                        <i class="fas fa-heartbeat"></i>
-                        <h3>Citizen Centric</h3>
-                        <p>Enhancing quality of life through smart infrastructure, healthcare, and community spaces.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+**IMAGE 1 HERE**ork
 
-        <section id="features" class="section">
-            <div class="container">
-                <h2>Key Smart City Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon"><i class="fas fa-traffic-light glowing-icon"></i></div>
-                        <h3>Optimized Traffic Flow</h3>
-                        <p>AI-driven traffic management, autonomous vehicle integration, and dynamic routing to eliminate congestion.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon"><i class="fas fa-solar-panel glowing-icon"></i></div>
-                        <h3>Net-Zero Energy Grid</h3>
-                        <p>100% renewable energy sources with smart grid distribution, minimizing carbon footprint.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon"><i class="fas fa-home glowing-icon"></i></div>
-                        <h3>Intelligent Infrastructure</h3>
-                        <p>Smart buildings adapt to environmental conditions and occupant needs, maximizing efficiency.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-icon"><i class="fas fa-robot glowing-icon"></i></div>
-                        <h3>Integrated IoT Network</h3>
-                        <p>Seamless connectivity for public services, waste management, and real-time environmental monitoring.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+**IMAGE 1 HERE**</b><br>
+In our designed city, all traffic signals are connected to each other through a central communication network. Every signal constantly shares data about:<br>
+• Current traffic density<br>
+• Queue length of vehicles<br>
+• Number of vehicles arriving from each direction<br>
+• Presence of emergency vehicles<br>
+• Abnormal conditions (accidents, roadblocks, VIP movement, etc.)<br>
+Using this shared real-time data, each signal creates a local plan but also adjusts it to match nearby signals, avoiding congestion moving from one junction to## How the system works>## How the syste### 1. Real-Time Data Sharing Between Signals
 
-        <section id="sustainability" class="section glass-effect">
-            <div class="container">
-                <h2>Sustainability Metrics</h2>
-                <p class="section-description">Tracking our commitment to a greener future with real-time data.</p>
-                <div class="metrics-grid">
-                    <div class="metric-item animate-on-scroll">
-                        <h3>Renewable Energy Usage</h3>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="--progress: 92%;"><span>92%</span></div>
-                        </div>
-                        <p>Powered primarily by solar, wind, and geothermal sources.</p>
-                    </div>
-                    <div class="metric-item animate-on-scroll">
-                        <h3>Waste Diversion Rate</h3>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="--progress: 85%;"><span>85%</span></div>
-                        </div>
-                        <p>Aggressive recycling and composting programs reduce landfill impact.</p>
-                    </div>
-                    <div class="metric-item animate-on-scroll">
-                        <h3>Green Space Per Capita</h3>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="--progress: 78%;"><span>78%</span></div>
-                        </div>
-                        <p>Extensive parks, vertical gardens, and urban farms integrated throughout.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+**IMAGE 2 HERE**Data Sharing Between Signals
 
-        <section id="team" class="section">
-            <div class="container">
-                <h2>Our Design Team</h2>
-                <div class="team-grid">
-                    <div class="team-card animate-on-scroll">
-                        <img src="https://via.placeholder.com/150/00bcd4/FFFFFF?text=A.S" alt="Anya Sharma" class="team-avatar">
-                        <h3 class="member-name">Anya Sharma</h3>
-                        <p class="member-usn">1DS22IS001</p>
-                        <span class="role-badge"><i class="fas fa-laptop-code"></i> Lead Architect</span>
-                        <a href="#" class="btn-profile">View Profile</a>
-                    </div>
-                    <div class="team-card animate-on-scroll">
-                        <img src="https://via.placeholder.com/150/4CAF50/FFFFFF?text=B.C" alt="Ben Carter" class="team-avatar">
-                        <h3 class="member-name">Ben Carter</h3>
-                        <p class="member-usn">1DS22IS002</p>
-                        <span class="role-badge"><i class="fas fa-leaf"></i> Eco-Systems Spec.</span>
-                        <a href="#" class="btn-profile">View Profile</a>
-                    </div>
-                    <div class="team-card animate-on-scroll">
-                        <img src="https://via.placeholder.com/150/FFC107/333333?text=C.L" alt="Chloe Lee" class="team-avatar">
-                        <h3 class="member-name">Chloe Lee</h3>
-                        <p class="member-usn">1DS22IS003</p>
-                        <span class="role-badge"><i class="fas fa-robot"></i> IoT & AI Integrator</span>
-                        <a href="#" class="btn-profile">View Profile</a>
-                    </div>
-                    <div class="team-card animate-on-scroll">
-                        <img src="https://via.placeholder.com/150/f44336/FFFFFF?text=D.P" alt="Dev Patel" class="team-avatar">
-                        <h3 class="member-name">Dev Patel</h3>
-                        <p class="member-usn">1DS22IS004</p>
-                        <span class="role-badge"><i class="fas fa-road"></i> Urban Planner</span>
-                        <a href="#" class="btn-profile">View Profile</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+**IMAGE 2 HERE**</b><br>
+• Each traffic signal has sensors or AI cameras.<br>
+• Every 2–5 seconds, each signal sends data to nearby signals.<br>
+• The communication network forms a graph, where:<br>
+&nbsp;&nbsp;a. Signals = Nodes<br>
+&nbsp;&nbsp;b. Roads = Edges<br>
+&nbsp;&nbsp;c. Edge weights = congestion level / travel time<br>
+This enables si### 2. Predicting Traffic Build-Up & Adjusting Green TimePredicting Traffic Build-Up & Adjusting Green Time</b><br>
+Each signal uses the data from surrounding intersections to calculate:<br>
+• Which lane will get congested next<br>
+• How long the current vehicles must wait<br>
+• How long the green signal should be continued<br>
+• Whether the signal should be extended or reduced<br><br>
+<b>Algorithms Used Here</b><br>
+Used to prioritize lanes:<br>
+• Quick Sort / Merge Sort — Sorts directions by highest vehicle density → highest gets priority.<br>
+• Heap Sort — Maintains a priority queue:<br>
+&nbsp;&nbsp;o Emergency vehicles → highest priority<br>
+&nbsp;&nbsp;o Congested lanes → next priority<br>
+&nbsp;&nbsp;o Low-density lanes → lowest<br>
+This e### 3. Cooperative Decision-Making Between Signals
 
-    <footer id="contact" class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>Contact Project Lead</h3>
-                <p><i class="fas fa-envelope glowing-icon"></i> <a href="mailto:contact@aethelburg.com">contact@aethelburg.com</a></p>
-                <p><i class="fas fa-phone glowing-icon"></i> +1 234 567 8900</p>
-            </div>
-            <div class="footer-col">
-                <h3>University Project</h3>
-                <p>Project Guide: Prof. Anya Petrova</p>
-                <p>Department of Smart Systems Engineering</p>
-            </div>
-            <div class="footer-col">
-                <p>&copy; 2024 Aethelburg City Design. All Rights Reserved.</p>
-                <p>Blueprint for a Sustainable Future.</p>
-            </div>
-        </div>
-    </footer>
+**IMAGE 3 HERE**><b>### 3. Cooperative Decision-Making Between Signals
 
-    <script src="script.js"></script>
+**IMAGE</b><br>
+Each signal predicts how its decision affects the next signal.<br>
+Example:<br>
+If Signal A releases 100 vehicles, Signal B increases its green time to prepare for incoming flow.<br>
+This avoids:<br>
+• Traffic pile-up at the next junction<br>
+• Sudden congestion spikes<br>
+• Unbalanced flow<br><br>
+<b>Graph Algorithms Here</b><br>
+• BFS / DFS → To check if any path is blocked and traffic needs rerouting<br>
+• Dijkstra’s Algorithm → Predict travel time between signals<br>
+• Bellman-Ford → Adjust decisions when sudden congestion appears<br>### 4. Emergency Vehicle Priority Systemtion prediction</p>
+
+<p><b>4. EmergeWhen an ambulance, fire truck, or police vehicle is detected:<br>
+<b>Step-by-step Algorithm Flow</b><br>
+1. Signal detects emergency vehicle through RFID/GPS.<br>
+2. Immediately sends alert to all nearby signals.<br>
+3. Graph is updated → weights reduced on the emergency route.<br>
+4. Dijkstra’s algorithm finds the fastest route to the hospital.<br>
+5. The route signals turn green in advance (Green Corridor).<br>
+6. All other lanes get temporary red, sorted using a priority queue.<br>
+This ensures uninterrupted, fast movement for emergency services.</p>
+</section>
+
+<main class="container">
+
+    <!-- Placeholder for future projects -->
+    <section id="future-projects" class="project-section">
+      <div class="section-head">
+        <h2>Other Main Ideas (Add more)</h2>
+        <div class="meta">Add new sections below or duplicate this block</div>
+      </div>
+
+      <p>Copy the following structure to add a new idea:</p>
+      <pre><code>&lt;section id="your-id" class="project-section"&gt; ... &lt;/section&gt;</code></pre>
+
+      <p class="hint">Tip: for GitHub Pages, place images in <code>/images/</code> and reference them exactly by path (e.g. <code>images/traffic-1.png</code>).</p>
+
+    </section>
+
+    <section id="notes" class="project-section">
+      <h2>Notes &amp; Next steps</h2>
+      <ul class="clean">
+        <li>Dataset &amp; sensors: list sensor types and sampling rate (2–5s) before prototyping.</li>
+        <li>Start with a small grid (3x3 intersections) to test algorithms offline/simulated.</li>
+        <li>Use SUMO or a custom simulator for validation before field tests.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>Made for: DAA — Design & Analysis of Algorithms projects. File: <code>smart-traffic-management.html</code></div>
+      <div style="margin-top:8px;color:var(--muted)">How to use: commit this file to your repo, push to GitHub. For GitHub Pages enable it on the repository settings or place file in <code>docs/</code> and serve.</div>
+    </div>
+  </footer>
+
 </body>
 </html>
+
+### Image Placeholders
+
+1. **Image 1:** `path/to/image1.png`
+2. **Image 2:** `path/to/image2.png`
+3. **Image 3:** `path/to/image3.png`
+
