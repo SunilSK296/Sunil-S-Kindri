@@ -1,147 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Design & Business Ideas — Smart City</title>
+  <meta charset="UTF-8">
+  <title>Smart City Pollution Monitoring System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Design & Business Ideas — Smart City</h1>
-      <p class="lead">Collection of project concepts. Add more project sections below. (This page is ready to host on GitHub Pages.)</p>
-      <nav class="top-nav" aria-label="Main navigation">
-        <a href="#traffic-management">Traffic Management</a>
-        <a href="#future-projects">Future Projects</a>
-        <a href="#notes">Notes</a>
-        <a href="#page1">Page 1</a>
-        <a href="#page2">Page 2</a>
-        <a href="#page3">Page 3</a>
-        <a href="#page4">Page 4</a>
-        <a href="#page5">Page 5</a>
-        <a href="#page6">Page 6</a>
-        <a href="#page7">Page 7</a>
-        <a href="#page8">Page 8</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
+<header>
+  <h1>Smart City Pollution Monitoring System</h1>
+  <p>An integrated system for Air, Water, Land Pollution and Traffic Optimization</p>
+</header>
 
-    <!-- TRAFFIC MANAGEMENT SECTION -->
-    <section id="traffic-management" class="project-section">
-      <h2><b>1. TRAFFIC MANAGEMENT</b></h2>
+<section class="card">
+  <h2>Project Overview</h2>
+  <p>
+    This project presents a smart city–oriented pollution monitoring system that integrates
+    land, air, and water pollution analysis with traffic management.  
+    The system uses real-world algorithms and data structures to analyze pollution levels,
+    detect critical zones, and suggest optimizations.
+  </p>
+</section>
 
-      <h3><b>Concept: Interconnected Smart Traffic Signal Network</b></h3>
-      <p>
-      In our designed city, all traffic signals are connected to each other through a central communication network. Every signal constantly shares data about:
-      <br>• Current traffic density
-      <br>• Queue length of vehicles
-      <br>• Number of vehicles arriving from each direction
-      <br>• Presence of emergency vehicles
-      <br>• Abnormal conditions (accidents, roadblocks, VIP movement, etc.)
-      <br>Using this shared real-time data, each signal creates a local plan but also adjusts it to match nearby signals, avoiding congestion moving from one junction to another.
-      </p>
+<section class="card">
+  <h2>System Workflow</h2>
+  <div class="flowchart">
+    <div>User Inputs Area</div>
+    <span>↓</span>
+    <div>Trie (Area Search & Auto-complete)</div>
+    <span>↓</span>
+    <div>Hash Table (Fetch Pollution Data)</div>
+    <span>↓</span>
+    <div>Algorithm Processing</div>
+    <span>↓</span>
+    <div>Heap (Priority Alerts)</div>
+    <span>↓</span>
+    <div>Segment Tree (Trend Analysis)</div>
+    <span>↓</span>
+    <div>Dashboard Output</div>
+  </div>
+</section>
 
-      <h2><b>How the system works:</b></h2>
+<section class="card">
+  <h2>Algorithms Used</h2>
+  <ul>
+    <li><b>Trie:</b> Efficient area search and auto-completion</li>
+    <li><b>Hashing:</b> Fast retrieval of pollution data</li>
+    <li><b>Heap:</b> Identifies high-risk zones with priority</li>
+    <li><b>Dijkstra:</b> Optimal waste collection routes</li>
+    <li><b>Sliding Window:</b> Pollution trend monitoring</li>
+    <li><b>Union-Find:</b> Zone connectivity analysis</li>
+  </ul>
+</section>
 
-      <h3><b>1. Real-Time Data Sharing Between Signals</b></h3>
-      <p>
-      • Each traffic signal has sensors or AI cameras.<br>
-      • Every 2–5 seconds, each signal sends data to nearby signals.<br>
-      • The communication network forms a graph, where:<br>
-      &nbsp;&nbsp;a. Signals = Nodes<br>
-      &nbsp;&nbsp;b. Roads = Edges<br>
-      &nbsp;&nbsp;c. Edge weights = congestion level / travel time<br>
-      This enables situation awareness across the city.
-      </p>
-      <div class="center-img">
-        <img src="img/1_1.png" width="400" height="400">
-      </div>
+<section class="card">
+  <h2>Applications</h2>
+  <ul>
+    <li>Smart city planning</li>
+    <li>Environmental risk analysis</li>
+    <li>Traffic optimization using CO₂ data</li>
+    <li>Real-time pollution monitoring</li>
+  </ul>
+</section>
 
-      <h3><b>2. Predicting Traffic Build-Up & Adjusting Green Time</b></h3>
-      <p>
-      Each signal uses the data from surrounding intersections to calculate:<br>
-      • Which lane will get congested next<br>
-      • How long the current vehicles must wait<br>
-      • How long the green signal should be continued<br>
-      • Whether the signal should be extended or reduced<br><br>
-      <b>Algorithms Used Here</b><br>
-      Used to prioritize lanes:<br>
-      • Quick Sort / Merge Sort — Sorts directions by highest vehicle density → highest gets priority.<br>
-      • Heap Sort — Maintains a priority queue:<br>
-      &nbsp;&nbsp;o Emergency vehicles → highest priority<br>
-      &nbsp;&nbsp;o Congested lanes → next priority<br>
-      &nbsp;&nbsp;o Low-density lanes → lowest<br>
-      This ensures optimal order of green signals.
-      </p>
-      <div class="center-img">
-        <img src="img/1_2.png" width="400" height="400">
-      </div>
+<section class="card">
+  <h2>Conclusion</h2>
+  <p>
+    This system demonstrates how classical algorithms and data structures can be applied
+    to real-world smart city problems. The modular and scalable design allows easy future
+    expansion and real-time deployment.
+  </p>
+</section>
 
-      <h3><b>3. Cooperative Decision-Making Between Signals</b></h3>
-      <p>
-      Each signal predicts how its decision affects the next signal.<br>
-      Example:<br>
-      If Signal A releases 100 vehicles, Signal B increases its green time to prepare for incoming flow.<br>
-      This avoids:<br>
-      • Traffic pile-up at the next junction<br>
-      • Sudden congestion spikes<br>
-      • Unbalanced flow<br><br>
-      <b>Graph Algorithms Here</b><br>
-      • BFS / DFS → To check if any path is blocked and traffic needs rerouting<br>
-      • Dijkstra’s Algorithm → Predict travel time between signals<br>
-      • Bellman-Ford → Adjust decisions when sudden congestion appears<br>
-      • Floyd-Warshall → City-wide congestion prediction
-      </p>
-
-      <h3><b>4. Emergency Vehicle Priority System</b></h3>
-      <p>
-      When an ambulance, fire truck, or police vehicle is detected:<br>
-      <b>Step-by-step Algorithm Flow</b><br>
-      1. Signal detects emergency vehicle through RFID/GPS.<br>
-      2. Immediately sends alert to all nearby signals.<br>
-      3. Graph is updated → weights reduced on the emergency route.<br>
-      4. Dijkstra’s algorithm finds the fastest route to the hospital.<br>
-      5. The route signals turn green in advance (Green Corridor).<br>
-      6. All other lanes get temporary red, sorted using a priority queue.<br>
-      This ensures uninterrupted, fast movement for emergency services.
-      </p>
-      <div class="center-img">
-        <img src="img/1_3.png" width="400" height="400">
-      </div>
-
-    </section>
-
-    <!-- Placeholder for future projects -->
-    <section id="future-projects" class="project-section">
-      <div class="section-head">
-        <h2>Other Main Ideas (Add more)</h2>
-        <div class="meta">Add new sections below or duplicate this block</div>
-      </div>
-      <p>Copy the following structure to add a new idea:</p>
-      <pre><code>&lt;section id="your-id" class="project-section"&gt; ... &lt;/section&gt;</code></pre>
-      <p class="hint">Tip: for GitHub Pages, place images in <code>/images/</code> and reference them exactly by path (e.g. <code>images/traffic-1.png</code>).</p>
-    </section>
-
-    <section id="notes" class="project-section">
-      <h2>Notes &amp; Next steps</h2>
-      <ul class="clean">
-        <li>Dataset &amp; sensors: list sensor types and sampling rate (2–5s) before prototyping.</li>
-        <li>Start with a small grid (3x3 intersections) to test algorithms offline/simulated.</li>
-        <li>Use SUMO or a custom simulator for validation before field tests.</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div>Made for: DAA — Design & Analysis of Algorithms projects. File: <code>smart-traffic-management.html</code></div>
-      <div style="margin-top:8px;color:var(--muted)">How to use: commit this file to your repo, push to GitHub. For GitHub Pages enable it on the repository settings or place file in <code>docs/</code> and serve.</div>
-    </div>
-  </footer>
+<footer>
+  <p>Final Year Project | Computer Science & Engineering</p>
+</footer>
 
 </body>
 </html>
