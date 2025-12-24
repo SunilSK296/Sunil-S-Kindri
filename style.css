@@ -1,87 +1,327 @@
+/* =====================================================
+   GLOBAL RESET & VARIABLES
+===================================================== */
+:root {
+  --bg-main: #0b0f1a;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-glass: rgba(255, 255, 255, 0.12);
+  --text-main: #eaeaf0;
+  --text-muted: #b5b8c5;
+  --accent: #00e5ff;
+  --accent-soft: #00bcd4;
+  --border-glass: rgba(255, 255, 255, 0.2);
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.4);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-body {
-  background-color: #f5f7fa;
-  color: #2c3e50;
-  line-height: 1.6;
-  padding: 20px;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Header */
-header {
-  background: #1e3a5f;
-  color: white;
-  padding: 30px;
-  border-radius: 8px;
+body.tech-body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #12172a, #05060c);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =====================================================
+   HEADER & NAVIGATION
+===================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.glass-nav {
+  background: rgba(10, 15, 30, 0.85);
+}
+
+.header-container {
+  padding: 1.2rem 0;
   text-align: center;
-  margin-bottom: 30px;
 }
 
-header h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
-header p {
-  font-size: 16px;
-  opacity: 0.9;
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
-/* Card Sections */
+.top-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+.main-layout {
+  padding: 3rem 0;
+}
+
+/* =====================================================
+   CARD & SECTION STYLES
+===================================================== */
+.project-section {
+  margin-bottom: 4rem;
+}
+
 .card {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-glass);
 }
 
-.card h2 {
-  color: #1e3a5f;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #e0e6ed;
-  padding-bottom: 8px;
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-glass);
 }
 
-.card ul {
-  margin-left: 20px;
+/* =====================================================
+   HEADINGS
+===================================================== */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
 }
 
-.card ul li {
-  margin-bottom: 8px;
+.section-subtitle {
+  font-size: 1.2rem;
+  margin: 1.8rem 0 0.8rem;
 }
 
-/* Flowchart */
-.flowchart {
+.mini-title {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  color: var(--accent-soft);
+}
+
+.accent-line::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 6px;
+  border-radius: 4px;
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+.content-text {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* =====================================================
+   IMAGES
+===================================================== */
+.center-img {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.image-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hover-zoom img {
+  transition: transform 0.4s ease;
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* =====================================================
+   TABLES
+===================================================== */
+.interactive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.interactive-table th,
+.interactive-table td {
+  border: 1px solid var(--border-glass);
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.interactive-table thead {
+  background: rgba(0, 229, 255, 0.15);
+}
+
+.interactive-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =====================================================
+   LISTS
+===================================================== */
+.styled-list {
+  margin-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+.styled-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* =====================================================
+   FLOWCHART
+===================================================== */
+.flowchart-section {
+  margin-top: 2rem;
+}
+
+.flowchart-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: 500;
+  gap: 0.7rem;
 }
 
-.flowchart div {
-  background: #eef3f8;
-  padding: 10px 18px;
-  border-radius: 6px;
-  margin: 4px 0;
-  width: fit-content;
+.flow-step {
+  padding: 0.6rem 1.2rem;
+  background: rgba(0, 229, 255, 0.15);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: 0.85rem;
 }
 
-.flowchart span {
-  color: #1e3a5f;
-  font-size: 18px;
+.arrow {
+  font-size: 1.2rem;
+  color: var(--accent);
 }
 
-/* Footer */
-footer {
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+.fade-in {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  padding: 2rem 0;
   text-align: center;
-  margin-top: 40px;
-  padding: 15px;
-  color: #555;
-  font-size: 14px;
+  border-top: 1px solid var(--border-glass);
+}
+
+.glow-text {
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1.8rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
