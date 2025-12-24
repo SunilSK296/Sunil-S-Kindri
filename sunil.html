@@ -1,79 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Smart City Pollution Monitoring System</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design & Business Ideas — Smart City VRITDHARA</title>
 
-<header>
-  <h1>Smart City Pollution Monitoring System</h1>
-  <p>An integrated system for Air, Water, Land Pollution and Traffic Optimization</p>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts (optional – modern look) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="tech-body">
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+<header class="site-header glass-nav">
+  <div class="container header-container">
+    <h1 class="main-title glow-text">Design & Business Ideas — Smart City</h1>
+    <p class="lead subtitle">Collection of project concepts.</p>
+
+    <nav class="top-nav tech-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="https://sushant-bilage.github.io/PortfolioTeam09/" class="nav-link" target="_blank">Sushant</a>
+      <a href="vijayalaxmi.html" class="nav-link">Vijayalaxmi</a>
+      <a href="vaishnavi.html" class="nav-link">Vaishnavi</a>
+      <a href="collabz.html" class="nav-link">Collabz</a>
+    </nav>
+  </div>
 </header>
 
-<section class="card">
-  <h2>Project Overview</h2>
-  <p>
-    This project presents a smart city–oriented pollution monitoring system that integrates
-    land, air, and water pollution analysis with traffic management.  
-    The system uses real-world algorithms and data structures to analyze pollution levels,
-    detect critical zones, and suggest optimizations.
-  </p>
-</section>
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+<main class="container main-layout">
 
-<section class="card">
-  <h2>System Workflow</h2>
-  <div class="flowchart">
-    <div>User Inputs Area</div>
-    <span>↓</span>
-    <div>Trie (Area Search & Auto-complete)</div>
-    <span>↓</span>
-    <div>Hash Table (Fetch Pollution Data)</div>
-    <span>↓</span>
-    <div>Algorithm Processing</div>
-    <span>↓</span>
-    <div>Heap (Priority Alerts)</div>
-    <span>↓</span>
-    <div>Segment Tree (Trend Analysis)</div>
-    <span>↓</span>
-    <div>Dashboard Output</div>
+<!-- =====================================================
+     1. TRAFFIC MANAGEMENT
+===================================================== -->
+<section id="traffic-management" class="project-section card fade-in">
+
+  <h2 class="section-title accent-line"><b>1. TRAFFIC MANAGEMENT</b></h2>
+
+  <h3 class="section-subtitle"><b>Concept: Interconnected Smart Traffic Signal Network</b></h3>
+
+  <p class="content-text">
+    In our designed city, all traffic signals are connected to each other through a central communication network.
+    Every signal constantly shares data about:
+    <br>• Current traffic density
+    <br>• Queue length of vehicles
+    <br>• Number of vehicles arriving from each direction
+    <br>• Presence of emergency vehicles
+    <br>• Abnormal conditions (accidents, roadblocks, VIP movement, etc.)
+    <br>
+    Using this shared real-time data, each signal creates a local plan but also adjusts it to match nearby signals,
+    avoiding congestion moving from one junction to another.
+  </p>
+
+  <h2 class="section-title"><b>How the system works:</b></h2>
+
+  <h3 class="section-subtitle accent-line"><b>1. Real-Time Data Sharing Between Signals</b></h3>
+
+  <p class="content-text">
+    • Each traffic signal has sensors or AI cameras.<br>
+    • Every 2–5 seconds, each signal sends data to nearby signals.<br>
+    • The communication network forms a graph, where:<br>
+    &nbsp;&nbsp;a. Signals = Nodes<br>
+    &nbsp;&nbsp;b. Roads = Edges<br>
+    &nbsp;&nbsp;c. Edge weights = congestion level / travel time<br>
+    This enables situation awareness across the city.
+  </p>
+
+  <div class="center-img image-card hover-zoom">
+    <img src="img/1_1.png" width="400" height="400" class="responsive-img" alt="Traffic Graph">
   </div>
-</section>
 
-<section class="card">
-  <h2>Algorithms Used</h2>
-  <ul>
-    <li><b>Trie:</b> Efficient area search and auto-completion</li>
-    <li><b>Hashing:</b> Fast retrieval of pollution data</li>
-    <li><b>Heap:</b> Identifies high-risk zones with priority</li>
-    <li><b>Dijkstra:</b> Optimal waste collection routes</li>
-    <li><b>Sliding Window:</b> Pollution trend monitoring</li>
-    <li><b>Union-Find:</b> Zone connectivity analysis</li>
-  </ul>
-</section>
+  <h3 class="section-subtitle accent-line"><b>2. Predicting Traffic Build-Up & Adjusting Green Time</b></h3>
 
-<section class="card">
-  <h2>Applications</h2>
-  <ul>
-    <li>Smart city planning</li>
-    <li>Environmental risk analysis</li>
-    <li>Traffic optimization using CO₂ data</li>
-    <li>Real-time pollution monitoring</li>
-  </ul>
-</section>
-
-<section class="card">
-  <h2>Conclusion</h2>
-  <p>
-    This system demonstrates how classical algorithms and data structures can be applied
-    to real-world smart city problems. The modular and scalable design allows easy future
-    expansion and real-time deployment.
+  <p class="content-text">
+    Each signal uses the data from surrounding intersections to calculate:
+    <br>• Which lane will get congested next
+    <br>• How long the current vehicles must wait
+    <br>• How long the green signal should be continued
+    <br>• Whether the signal should be extended or reduced
+    <br><br>
+    <b>Algorithms Used Here</b><br>
+    Used to prioritize lanes:
+    <br>• Quick Sort — Sorts directions by highest vehicle density → highest gets priority.
+    <br>Maintains a priority queue:
+    <br>&nbsp;&nbsp;o Emergency vehicles → highest priority
+    <br>&nbsp;&nbsp;o Congested lanes → next priority
+    <br>&nbsp;&nbsp;o Low-density lanes → lowest
   </p>
+
+  <div class="center-img image-card hover-zoom">
+    <img src="img/1_2.png" width="400" height="400" class="responsive-img" alt="Signal Prediction">
+  </div>
+
+  <h3 class="section-subtitle accent-line"><b>3. Cooperative Decision-Making Between Signals</b></h3>
+
+  <p class="content-text">
+    Each signal predicts how its decision affects the next signal.
+    <br><br>
+    Example:
+    <br>If Signal A releases 100 vehicles, Signal B increases its green time to prepare for incoming flow.
+    <br><br>
+    <b>Graph Algorithms Here</b>
+    <br>• Dijkstra’s Algorithm → Predict travel time between signals
+    <br>• Traffic optimizer function manages the traffic flow.
+  </p>
+
+  <h3 class="section-subtitle accent-line"><b>4. Emergency Vehicle Priority System</b></h3>
+
+  <p class="content-text">
+    When an ambulance, fire truck, or police vehicle is detected:
+    <br><br>
+    <b>Step-by-step Algorithm Flow</b>
+    <br>1. Signal detects emergency vehicle through RFID/GPS.
+    <br>2. Immediately sends alert to all nearby signals.
+    <br>3. Graph is updated → weights reduced on the emergency route.
+    <br>4. Dijkstra’s algorithm finds the fastest route.
+    <br>5. The route signals turn green in advance.
+    <br>6. All other lanes get temporary red.
+  </p>
+
+  <div class="center-img image-card hover-zoom">
+    <img src="img/1_3.png" width="500" height="400" class="responsive-img" alt="Emergency Corridor">
+  </div>
+
+  <!-- Buttons -->
+  <h3 class="section-subtitle">Real-time code and its input data:</h3>
+
+  <div class="button-group action-buttons">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Traffic%20Management/t.cpp"
+       class="btn neon-btn ripple-effect" target="_blank">Code (C++)</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Traffic%20Management/traffic_data.csv"
+       class="btn neon-btn ripple-effect" target="_blank">Traffic Data</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Traffic%20Management/nearby_junctions.csv"
+       class="btn neon-btn ripple-effect" target="_blank">Nearby Junctions</a>
+  </div>
+
+  <h3 class="section-subtitle">Space and Time Efficiency:</h3>
+
+  <div class="button-group action-buttons">
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Traffic%20Management/Function_efficiency.csv"
+       class="btn neon-btn ripple-effect" target="_blank">Functions Efficiency</a>
+    <a href="https://github.com/Vijayalaxmi-B-U/team9.github.io/blob/main/Sunil/Traffic%20Management/System_efficiency.csv"
+       class="btn neon-btn ripple-effect" target="_blank">System Efficiency</a>
+  </div>
+
+  <h3 class="section-subtitle"><b>SDGs:</b></h3>
+
+  <table class="aqi-table interactive-table">
+    <thead>
+      <tr>
+        <th>SDG</th>
+        <th>Target</th>
+        <th>Indicator</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3: Good Health & Well-being</td>
+        <td>3.6</td>
+        <td>Traffic accident reduction</td>
+      </tr>
+      <tr>
+        <td>11: Sustainable Cities</td>
+        <td>11.2</td>
+        <td>Average vehicle idle time</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Flowchart -->
+  <h3 class="section-subtitle"><b>Flow Chart:</b></h3>
+
+  <div class="flowchart-section glass-card">
+    <div class="flowchart-box">
+      <div class="step flow-step animate-step">START</div>
+      <div class="arrow animated-arrow">↓</div>
+      <div class="step flow-step animate-step">Collect Sensor Data</div>
+      <div class="arrow animated-arrow">↓</div>
+      <div class="step flow-step animate-step">Analyze Traffic Density</div>
+      <div class="arrow animated-arrow">↓</div>
+      <div class="step flow-step animate-step end">END</div>
+    </div>
+  </div>
+
 </section>
 
-<footer>
-  <p>Final Year Project | Computer Science & Engineering</p>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer class="site-footer minimal-footer">
+  <div class="container footer-container">
+    <div class="thank-you glow-text">
+      THANK YOU !!!
+    </div>
+  </div>
 </footer>
 
 </body>
